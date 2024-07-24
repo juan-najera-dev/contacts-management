@@ -1,0 +1,13 @@
+{
+	"name": "03-gestor-contactos",
+	"version": "1.0.0",
+	"description": "",
+	"main": "app.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [],
+	"author": "Juan Najera",
+	"license": "ISC",
+	"type": "module"
+}

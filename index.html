@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Gestor de Contactos</title>
+		<link rel="stylesheet" href="style.css" />
+		<!-- font-awesome -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="./assets/favicon/favicon-16x16.png"
+		/>
+	</head>
+	<body>
+		<h2>Directorio</h2>
+		<div class="inputBox-container">
+			<i class="search-icon fa-solid fa-magnifying-glass"></i>
+			<input
+				class="inputBox"
+				id="inputBox"
+				type="text"
+				placeholder="buscar contacto"
+			/>
+			<i class="clear-search fas fa-times"></i>
+		</div>
+		<h4>contactos</h4>
+		<div class="contacts-container">
+			<a class="add-contact">
+				<i class="fa-solid fa-plus"></i>
+			</a>
+		</div>
+		<!-- modal new contact -->
+		<div class="modal-overlay-add">
+			<div class="modal-container-add">
+				<div class="inputBox-add">
+					<h4>Datos del contacto</h4>
+					<form class="add-contact-form">
+						<div class="hide"></div>
+						<input
+							class="inputBox-modal"
+							id="inputName"
+							type="text"
+							placeholder="nombre"
+							required
+						/>
+						<input
+							class="inputBox-modal"
+							id="inputPhone"
+							type="tel"
+							pattern="[0-9]{10}"
+							placeholder="teléfono 10 dígitos"
+							required
+						/>
+						<input
+							class="inputBox-modal"
+							id="inputEmail"
+							type="email"
+							placeholder="email"
+						/>
+						<select id="inputLabel" class="custom-select">
+							<option value="" selected disabled>etiqueta</option>
+							<option value="trabajo">Trabajo</option>
+							<option value="familia">Familia</option>
+							<option value="amistad">Amigo/a</option>
+						</select>
+						<input class="submit-btn" type="submit" value="Agregar" />
+						<input
+							class="submit-btn"
+							id="edit-form"
+							type="button"
+							value="Editar"
+						/>
+					</form>
+				</div>
+				<button class="close-btn-add"><i class="fas fa-times"></i></button>
+			</div>
+		</div>
+		<script type="module" src="./app.js"></script>
+	</body>
+</html>

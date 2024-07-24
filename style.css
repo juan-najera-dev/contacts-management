@@ -1,0 +1,339 @@
+/*
+=============== 
+Fonts
+===============
+*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+/*
+=============== 
+Variables
+===============
+*/
+:root {
+	--clr-white: #fff;
+	--clr-black: #222;
+	--clr-blue-light: #1d5cb0;
+	--clr-red-dark: hsl(360, 67%, 44%);
+	--clr-red-light: hsl(360, 71%, 66%);
+	--clr-green-dark: hsl(125, 67%, 44%);
+	--clr-green-light: hsl(125, 71%, 66%);
+	--clr-grey-light: rgba(114, 109, 109, 0.5);
+	--clr-grey-dark: rgba(88, 83, 83, 0.5);
+	--ff-primary: "Montserrat", sans-serif;
+	--transition: all 0.3s linear;
+	--radius: 1rem;
+}
+
+/*
+=============== 
+General
+===============
+*/
+
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--clr-black);
+	color: var(--clr-white);
+	font-family: var(--ff-primary);
+}
+
+a {
+	text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	text-transform: capitalize;
+	line-height: 1.25;
+	margin-bottom: 0.75rem;
+}
+h1 {
+	font-size: 3rem;
+}
+h2 {
+	font-size: 2rem;
+}
+h3 {
+	font-size: 1.5rem;
+}
+h4 {
+	font-size: 1.25rem;
+}
+h5 {
+	font-size: 1.15rem;
+}
+h6 {
+	font-size: 1.05rem;
+}
+
+.inputBox-container {
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+	width: 50%;
+	padding: 0.5rem;
+	background-color: var(--clr-grey-dark);
+	border-radius: 0.8rem;
+	overflow: hidden;
+}
+
+.inputBox-add {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	width: 90%;
+	padding: 1rem;
+	background-color: var(--clr-black);
+	border-radius: 0.8rem;
+	overflow: hidden;
+}
+
+.search-icon,
+.clear-search {
+	height: 1em;
+	padding: 1rem;
+	transition: var(--transition);
+}
+
+.search-icon:hover,
+.clear-search:hover {
+	scale: 1.4;
+	cursor: pointer;
+}
+
+.inputBox {
+	background-color: transparent;
+	color: var(--clr-white);
+	outline: none;
+	width: 100%;
+	border: 0;
+	padding: 0.5em 1.5em 0.5em 0;
+	font-size: 1rem;
+}
+
+.inputBox-modal {
+	background-color: var(--clr-grey-dark);
+	color: var(--clr-white);
+	width: 90%;
+	margin: 0.5rem;
+	border: 1px solid var(--clr-grey-light);
+	outline: none;
+	border-radius: 1rem;
+	padding: 0.5rem;
+	font-size: 1rem;
+}
+
+::placeholder {
+	color: #abb2bf;
+}
+
+.custom-select {
+	background-color: var(--clr-grey-dark);
+	color: var(--clr-white);
+	width: 92%;
+	margin: 0.5rem;
+	border: 1px solid var(--clr-grey-light);
+	outline: none;
+	border-radius: 1rem;
+	padding: 0.5rem;
+	font-size: 1rem;
+}
+
+.contacts-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.contact-card {
+	width: 90%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	margin: 1rem;
+	border: solid;
+	border-radius: 1.5rem;
+	border-color: var(--clr-grey-dark);
+	box-shadow: 0.4rem 0.4rem rgba(255, 255, 255, 0.1);
+}
+
+.contact-card {
+	transition: var(--transition);
+}
+
+.contact-card:hover {
+	background-color: var(--clr-grey-dark);
+}
+
+.contact-name,
+.contact-label {
+	flex-grow: 1;
+	margin: 0.3rem;
+	text-transform: capitalize;
+}
+
+.contact-photo,
+.contact-phone,
+.contact-email {
+	flex-grow: 1;
+	margin: 0.3rem;
+}
+
+.contact-photo {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 4%;
+}
+
+.contact-photo-avatar {
+	max-width: 100%;
+	height: auto;
+	border-radius: 50%;
+}
+
+.action-btns {
+	min-width: 6%;
+	display: flex;
+	justify-content: space-between;
+	margin: 1rem;
+}
+
+.edit-btn,
+.delete-btn {
+	transition: var(--transition);
+}
+
+.edit-btn:hover {
+	color: var(--clr-green-light);
+	cursor: pointer;
+	scale: 1.2;
+}
+
+.delete-btn:hover {
+	color: var(--clr-red-light);
+	cursor: pointer;
+	scale: 1.2;
+}
+
+.add-contact {
+	font-size: 1.25rem;
+	position: fixed;
+	bottom: 3rem;
+	right: 3rem;
+	background: var(--clr-blue-light);
+	width: 2.5rem;
+	height: 2.5rem;
+	display: grid;
+	place-items: center;
+	border-radius: 50%;
+	color: var(--clr-white);
+	animation: bounce 2s ease-in-out infinite;
+	transition: var(--transition);
+}
+
+.add-contact:hover {
+	scale: 1.2;
+	animation: bounceHover 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.25);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+@keyframes bounceHover {
+	0% {
+		transform: scale(1.2);
+	}
+	50% {
+		transform: scale(1.3);
+	}
+	100% {
+		transform: scale(1.2);
+	}
+}
+
+.modal-overlay-add,
+.modal-overlay-edit {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(62, 70, 75, 0.5);
+	display: grid;
+	place-items: center;
+	transition: var(--transition);
+	visibility: hidden;
+	z-index: -10;
+}
+
+.modal-container-add,
+.modal-container-edit {
+	background: var(--clr-black);
+	border-radius: var(--radius);
+	width: 90vw;
+	height: 40vh;
+	text-align: center;
+	display: grid;
+	place-items: center;
+	position: relative;
+}
+
+.close-btn-add,
+.close-btn-edit {
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+	font-size: 2rem;
+	background: transparent;
+	border-color: transparent;
+	color: var(--clr-red-dark);
+	cursor: pointer;
+	transition: var(--transition);
+}
+
+.close-btn-add:hover,
+.close-btn-edit:hover {
+	color: var(--clr-red-light);
+	transform: scale(1.1);
+}
+
+.submit-btn {
+	width: 20%;
+	background: var(--clr-grey-dark);
+	border-color: var(--clr-grey-light);
+	border-radius: var(--radius);
+	margin: 0.5rem;
+	padding: 0.5rem;
+	font-family: var(--ff-primary);
+	font-size: 1rem;
+	color: var(--clr-white);
+	cursor: pointer;
+	transition: var(--transition);
+	text-transform: capitalize;
+}
+
+.submit-btn:hover {
+	background-color: var(--clr-green-light);
+}
+
+.open-modal {
+	visibility: visible;
+	z-index: 10;
+}
